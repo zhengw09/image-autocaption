@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Auto caption your image!</h1>
+    <p>
+      	<p>Upload an image and generate a caption</p>
+      	<form method=post enctype=multipart/form-data>          
+          {% if post %}
+          <p><img src="static/images/{{ filename }}" class="img-thumbnail" style="width:128px;height:128px;"></p>
+          {% endif %}
+          <input id="file_input" type="file" name="file">
+             <button id="file_submit" type="submit" name="op" value="add">Upoad</button>
+        </form>
+	
+
+    </p>
+{% endblock %}
+
+
