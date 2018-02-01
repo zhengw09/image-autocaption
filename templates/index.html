@@ -6,6 +6,7 @@
       	<form method=post enctype=multipart/form-data>          
           {% if post %}
           <p><img src="static/images/{{ filename }}" class="img-thumbnail" style="width:128px;height:128px;"></p>
+          <p>{{ caption }}</p>
           {% endif %}
           <input id="file_input" type="file" name="file">
              <button id="file_submit" type="submit" name="op" value="add">Upoad</button>
