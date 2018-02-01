@@ -18,7 +18,7 @@ def allowed_file(filename):
 
 def get_caption(filename):
     os.chdir('../ImageCaptionGenerator')
-    src = os.path.join('../image-autocaption/static/images', filename)
+    src = os.path.join('../image_autocaption/static/images', filename)
     dst = os.path.join('image/pred', filename)
     shutil.copyfile(src, dst)
     caption = predict.main()
