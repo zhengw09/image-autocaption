@@ -4,8 +4,8 @@ import os
 import sys
 import shutil
 # from extensions import connect_to_database
-sys.path.append('../ImageCaptionGenerator')
-import predict
+#sys.path.append('../ImageCaptionGenerator')
+#import predict
 
 main = Blueprint('main', __name__, template_folder='templates')
 
@@ -17,14 +17,14 @@ def allowed_file(filename):
 
 
 def get_caption(filename):
-    # os.chdir('../ImageCaptionGenerator')
-    # src = os.path.join('../image-autocaption/static/images', filename)
-    # dst = os.path.join('image/pred', filename)
-    # shutil.copyfile(src, dst)
-    # caption = predict.main()
-    # os.chdir(os.path.dirname(os.path.realpath(__file__)))
-    # return caption
-    return "test caption"
+    os.chdir('../ImageCaptionGenerator')
+    src = os.path.join('../image-autocaption/static/images', filename)
+    dst = os.path.join('image/pred', filename)
+    shutil.copyfile(src, dst)
+    caption = predict.main()
+    os.chdir(os.path.dirname(os.path.realpath(__file__)))
+    return caption
+    # return "test caption"
 
 
 @main.route('/', methods=['GET', 'POST'])
